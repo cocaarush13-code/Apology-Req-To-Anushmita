@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe0eb, #f7b8d0, #fce4ec);
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  min-height: 390px;
+  background: rgba(255,255,255,0.88);
+  border-radius: 28px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(180,70,110,0.18);
+  position: relative;
+  z-index: 2;
+}
+
+.screen {
+  display: none;
+  animation: fadeIn 0.7s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+.emoji {
+  font-size: 55px;
+  margin-bottom: 20px;
+  animation: float 2s infinite ease-in-out;
+}
+
+h1 {
+  color: #c43b69;
+  font-size: 27px;
+  margin-bottom: 18px;
+}
+
+p {
+  color: #75515e;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+button {
+  background: #e75480;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(231,84,128,0.25);
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #c43b69;
+  transform: scale(1.05);
+}
+
+#final {
+  margin-top: 20px;
+  color: #c43b69;
+  font-weight: 600;
+}
+
+.heart-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -30px;
+  color: #e75480;
+  font-size: 22px;
+  opacity: 0;
+  animation: rise 7s linear forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
